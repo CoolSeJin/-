@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>동아리 웹사이트 - KSHCM 스타일</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --main-color: #1b4f9f;
+            --secondary-color: #2e86de;
+            --accent-color: #ff9f43;
+            --light-color: #f5f6fa;
+            --dark-color: #2f3640;
+        }
+        
+        body {
+            font-family: 'Malgun Gothic', '맑은 고딕', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        
+        /* 헤더 스타일 */
+        .top-bar {
+            background-color: var(--main-color);
+            color: white;
+            padding: 5px 0;
+            font-size: 14px;
+        }
+        
+        .header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--main-color);
+        }
+        
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .nav-item {
+            margin: 0 15px;
+            position: relative;
+            font-weight: 600;
+        }
+        
+        .nav-item a {
+            color: var(--dark-color);
+            text-decoration: none;
+            padding: 10px 0;
+            display: block;
+        }
+        
+        .nav-item a:hover, .nav-item a.active {
+            color: var(--main-color);
+            border-bottom: 3px solid var(--main-color);
+        }
+        
+        /* 메인 배너 */
+        .main-banner {
+            background: linear-gradient(rgba(27, 79, 159, 0.8), rgba(27, 79, 159, 0.8)), url('https://via.placeholder.com/1200x400');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        /* 섹션 스타일 */
+        .section-title {
+            position: relative;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            font-weight: 700;
+            color: var(--main-color);
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+        
+        .card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+            margin-bottom: 20px;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .card-title {
+            color: var(--main-color);
+            font-weight: 600;
+        }
+        
+        /* 탭 메뉴 */
+        .tab-menu {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .tab-item {
+            padding: 10px 20px;
+            cursor: pointer;
+            background: #f1f1f1;
+            margin-right: 5px;
+            border-radius: 5px 5px 0 0;
+            font-weight: 500;
+        }
+        
+        .tab-item.active {
+            background: var(--main-color);
+            color: white;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        /* 타임라인 스타일 */
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background-color: var(--secondary-color);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+        }
+        
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: -38px;
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: var(--accent-color);
+            border: 4px solid var(--secondary-color);
+        }
+        
+        .timeline-date {
+            font-weight: bold;
+            color: var(--main-color);
+            margin-bottom: 5px;
+        }
+        
+        .timeline-content {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 3px solid var(--accent-color);
+        }
+        
+        /* 푸터 */
+        .footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 50px 0 20px;
+            margin-top: 50px;
+        }
+        
+        .footer-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            margin-top: 20px;
+            border-top: 1px solid #444;
+            color: #aaa;
+        }
+        
+        /* 반응형 */
+        @media (max-width: 768px) {
+            .nav-menu {
+                flex-direction: column;
+            }
+            
+            .nav-item {
+                margin: 5px 0;
+            }
+            
+            .tab-menu {
+                flex-direction: column;
+            }
+            
+            .tab-item {
+                margin-bottom: 5px;
+                border-radius: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 상단 바 -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <span><i class="bi bi-telephone"></i> 02-1234-5678</span>
+                    <span class="ms-3"><i class="bi bi-envelope"></i> club@example.com</span>
+                </div>
+                <div class="col-md-6 text-end">
+                    <span><i class="bi bi-person"></i> 로그인</span>
+                    <span class="ms-3"><i class="bi bi-person-plus"></i> 회원가입</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 헤더 -->
+    <header class="header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-3">
+                    <div class="logo">헬로월드 동아리</div>
+                </div>
+                <div class="col-md-9">
+                    <div class="nav-menu">
+                        <div class="nav-item"><a href="#" class="active">홈</a></div>
+                        <div class="nav-item"><a href="#">동아리 소개</a></div>
+                        <div class="nav-item"><a href="#">동아리 역사</a></div>
+                        <div class="nav-item"><a href="#">동아리 활동</a></div>
+                        <div class="nav-item"><a href="#">라온제나 작품</a></div>
+                        <div class="nav-item"><a href="#">해커톤 캠프</a></div>
+                        <div class="nav-item"><a href="#">공지사항</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- 메인 배너 -->
+    <div class="main-banner">
+        <div class="container">
+            <h1>창의력과 열정이 만나는 공간</h1>
+            <p class="lead">헬로월드 동아리에서는 다양한 활동을 통해 창의력을 발휘하고 꿈을 펼칠 수 있습니다.</p>
+            <button class="btn btn-light btn-lg mt-3">동아리 활동 보기</button>
+        </div>
+    </div>
+    
+    <!-- 메인 콘텐츠 -->
+    <div class="container">
+        <!-- 탭 메뉴 -->
+        <div class="tab-menu">
+            <div class="tab-item active" onclick="openTab('tab1')">동아리 역사</div>
+            <div class="tab-item" onclick="openTab('tab2')">동아리 활동</div>
+            <div class="tab-item" onclick="openTab('tab3')">라온제나 작품</div>
+            <div class="tab-item" onclick="openTab('tab4')">해커톤 캠프</div>
+        </div>
+        
+        <!-- 동아리 역사 -->
+        <div id="tab1" class="tab-content active">
+            <h2 class="section-title">동아리 역사</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <p>헬로월드 동아리는 2020년 오동철 선생님에 의해 창단된 소프트웨어 동아리입니다. 당시 오동철 선생님은 학생들이 교과 과정 속 이론적 정보 교육에만 머무르지 않고, 실제 소프트웨어를 다루며 개발 경험을 쌓을 수 있는 장을 마련하고자 했습니다.</p>
+                    <p>이에 따라 학교 내 컴퓨터실을 중심으로 의지가 있는 학생들을 모아 헬로월드를 설립하였으며, 프로그래밍 기초 학습과 프로젝트 활동을 중심으로 운영이 시작되었습니다.</p>
+                    <p>2023년에는 이유준 선생님께서 합류하면서 동아리는 새로운 전환점을 맞았습니다. 지도 체계가 강화되고 활동 영역이 확대되면서 헬로월드는 빠른 성장을 이루었고, 학생들의 참여도와 성취가 눈에 띄게 증가하였습니다.</p>
+                </div>
+                <div class="col-md-6">
+                    <img src="https://via.placeholder.com/500x300" alt="동아리 역사 이미지" class="img-fluid rounded">
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-md-12">
+                    <h3 class="mb-4">주요 연혁</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-date">2020.03</div>
+                            <div class="timeline-content">
+                                <h5>헬로월드 동아리 창단</h5>
+                                <p>오동철 선생님에 의해 창단되어 첫 발대식을 가짐</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">2023.02</div>
+                            <div class="timeline-content">
+                                <h5>이유준 선생님 합류</h5>
+                                <p>지도 체계 강화로 동아리 활동 영역 확대</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">2023.08</div>
+                            <div class="timeline-content">
+                                <h5>첫 해커톤 개최</h5>
+                                <p>50명이 참여한 가운데 성공적으로 해커톤 진행</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">2024.01</div>
+                            <div class="timeline-content">
+                                <h5>첫 동아리 캠프 진행</h5>
+                                <p>겨울방학 동안 집중적인 워크숍과 팀 프로젝트 진행</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">2024.11</div>
+                            <div class="timeline-content">
+                                <h5>전국 대회 우수상 수상</h5>
+                                <p>창의적인 프로젝트로 평가받아 우수상 수상</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">2025.05</div>
+                            <div class="timeline-content">
+                                <h5>제5회 정기발표회</h5>
+                                <p>100명 이상의 관객 앞에서 다양한 작품 발표</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-md-12">
+                    <p>이후 헬로월드는 학교 내에서만 머무르지 않고 지역과 학교 간 네트워크를 넓히며, 초·고 연합캠프와 중·고 연합캠프를 주관하는 등 중심적인 역할을 맡게 되었습니다. 더 나아가 해커톤 대회 역시 헬로월드의 기획과 운영 아래 열리게 되면서, 소프트웨어 분야에서 영향력 있는 동아리로 자리 잡았습니다.</p>
+                    <p>이러한 흐름 속에서 헬로월드는 2025년에 전성기를 맞이하였습니다. 수많은 학생들이 동아리의 문을 두드리며 소프트웨어 교육과 협업 경험을 얻기 위해 참여하였고, 다양한 프로젝트와 대회를 통해 눈에 띄는 성과를 거두었습니다.</p>
+                    <p>헬로월드의 목적은 단순히 프로그래밍 능력을 기르는 것에 그치지 않고, 창의적이고 혁신적인 문제 해결력을 키워 미래 사회의 변화를 주도할 수 있는 인재를 양성하는 것입니다. 또한, 장기적으로 학교를 대표하는 ICT 동아리로서, 나아가 지역과 사회에 기여할 수 있는 소프트웨어 공동체로 성장하는 것을 비전으로 삼고 있습니다.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 동아리 활동 -->
+        <div id="tab2" class="tab-content">
+            <h2 class="section-title">동아리 활동</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="정기 모임">
+                        <div class="card-body">
+                            <h5 class="card-title">정기 모임</h5>
+                            <p class="card-text">매주 수요일 정기 모임을 통해 아이디어를 공유하고 프로젝트를 진행합니다.</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary">자세히 보기</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="스터디 그룹">
+                        <div class="card-body">
+                            <h5 class="card-title">스터디 그룹</h5>
+                            <p class="card-text">다양한 기술과 주제에 대한 스터디 그룹이 활발하게 활동하고 있습니다.</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary">자세히 보기</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="특강">
+                        <div class="card-body">
+                            <h5 class="card-title">특강</h5>
+                            <p class="card-text">분야별 전문가를 초청하여 특강을 진행하고 지식을 공유합니다.</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary">자세히 보기</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 라온제나 작품 -->
+        <div id="tab3" class="tab-content">
+            <h2 class="section-title">라온제나 작품</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="웹 프로젝트">
+                        <div class="card-body">
+                            <h5 class="card-title">웹 프로젝트</h5>
+                            <p class="card-text">창의적인 웹사이트와 웹 애플리케이션을 개발하는 프로젝트입니다.</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary">자세히 보기</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="모바일 앱">
+                        <div class="card-body">
+                            <h5 class="card-title">모바일 앱</h5>
+                            <p class="card-text">사용자 친화적인 모바일 애플리케이션을 기획하고 개발합니다.</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary">자세히 보기</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="디자인 프로젝트">
+                        <div class="card-body">
+                            <h5 class="card-title">디자인 프로젝트</h5>
+                            <p class="card-text">UI/UX 디자인부터 그래픽 디자인까지 다양한 디자인 프로젝트를 진행합니다.</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary">자세히 보기</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 해커톤 캠프 -->
+        <div id="tab4" class="tab-content">
+            <h2 class="section-title">해커톤 캠프</h2>
+            <div class="row">
+                <div class="col-md-8">
+                    <p>헬로월드 동아리는 매년 정기적으로 해커톤과 캠프를 개최하여 회원들의 창의력과 기술력을 발휘할 기회를 제공하고 있습니다. 해커톤은 24시간에서 48시간 동안 진행되며, 팀을 구성하여 주어진 주제에 맞는 프로젝트를 완성합니다. 캠프에서는 집중 워크숍, 팀 프로젝트, 레크리에이션 등 다양한 활동을 통해 회원들 간의 교류와 성장의 기회를 제공합니다.</p>
+                    
+                    <h4 class="mt-4">최근 해커톤 주제</h4>
+                    <ul>
+                        <li>2025년 상반기: "지속 가능한 개발을 위한 기술"</li>
+                        <li>2024년 하반기: "메타버스와 현실의 융합"</li>
+                        <li>2024년 상반기: "포스트 코로나 시대의 일상"</li>
+                        <li>2023년 하반기: "사회적 문제 해결을 위한 기술"</li>
+                    </ul>
+                    
+                    <h4 class="mt-4">주요 캠프 활동</h4>
+                    <ul>
+                        <li>집중 기술 워크숍</li>
+                        <li>팀 빌딩 활동</li>
+                        <li>선후배 멘토링</li>
+                        <li>프로젝트 발표회</li>
+                        <li>레크리에이션 및 네트워킹</li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <img src="https://via.placeholder.com/400x300" alt="해커톤 캠프 이미지" class="img-fluid rounded">
+                </div>
+            </div>
+            
+            <h4 class="mt-5">해커톤 캠프 갤러리</h4>
+            <div class="row mt-3">
+                <div class="col-md-3 col-6">
+                    <img src="https://via.placeholder.com/200x150" alt="해커톤 캠프 사진 1" class="img-thumbnail">
+                </div>
+                <div class="col-md-3 col-6">
+                    <img src="https://via.placeholder.com/200x150" alt="해커톤 캠프 사진 2" class="img-thumbnail">
+                </div>
+                <div class="col-md-3 col-6">
+                    <img src="https://via.placeholder.com/200x150" alt="해커톤 캠프 사진 3" class="img-thumbnail">
+                </div>
+                <div class="col-md-3 col-6">
+                    <img src="https://via.placeholder.com/200x150" alt="해커톤 캠프 사진 4" class="img-thumbnail">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5 class="footer-title">헬로월드 동아리</h5>
+                    <p>창의력과 열정이 만나는 공간</p>
+                    <p>서울특별시 강남구 테헤란로 123</p>
+                    <p>Tel: 02-1234-5678 | Email: club@example.com</p>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="footer-title">빠른 링크</h5>
+                    <div class="footer-links">
+                        <a href="#">동아리 소개</a>
+                        <a href="#">공지사항</a>
+                        <a href="#">갤러리</a>
+                        <a href="#">문의하기</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="footer-title">SNS</h5>
+                    <div class="footer-links">
+                        <a href="#"><i class="bi bi-facebook"></i> Facebook</a>
+                        <a href="#"><i class="bi bi-instagram"></i> Instagram</a>
+                        <a href="#"><i class="bi bi-twitter"></i> Twitter</a>
+                        <a href="#"><i class="bi bi-youtube"></i> YouTube</a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2023 헬로월드 동아리. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // 탭 메뉴 전환 함수
+        function openTab(tabId) {
+            // 모든 탭 콘텐츠 숨기기
+            const tabContents = document.getElementsByClassName('tab-content');
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove('active');
+            }
+            
+            // 모든 탭 아이템 비활성화
+            const tabItems = document.getElementsByClassName('tab-item');
+            for (let i = 0; i < tabItems.length; i++) {
+                tabItems[i].classList.remove('active');
+            }
+            
+            // 선택한 탭 활성화
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+        
+        // 페이지 로드 시 기본으로 첫 번째 탭 활성화
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('.tab-item').classList.add('active');
+            document.getElementById('tab1').classList.add('active');
+        });
+    </script>
+</body>
+</html>
