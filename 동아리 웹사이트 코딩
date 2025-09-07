@@ -105,7 +105,7 @@
         
         /* 메인 배너 */
         .main-banner {
-            background: linear-gradient(rgba(27, 79, 159, 0.8), rgba(27, 79, 159, 0.8)), url('https://via.placeholder.com/1200x400');
+            background: linear-gradient(rgba(27, 79, 159, 0.8), rgba(27, 79, 159, 0.8)), url('https://via.placeholder.com/1200x400/1b4f9f/ffffff?text=헬로월드+동아리');
             background-size: cover;
             background-position: center;
             color: white;
@@ -130,11 +130,70 @@
         .card-img-top {
             height: 200px;
             object-fit: cover;
+            background-color: #e9ecef;
         }
         
         .card-title {
             color: var(--main-color);
             font-weight: 600;
+        }
+        
+        /* 이미지 로드 실패 시 대체 스타일 */
+        .img-fallback {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .img-fallback i {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+        
+        /* 텍스트 슬라이더 스타일 */
+        .text-slide {
+            min-width: 100%;
+            position: relative;
+            background: linear-gradient(135deg, var(--main-color), var(--secondary-color));
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px;
+            height: 500px;
+        }
+        
+        .text-slide-content {
+            max-width: 800px;
+        }
+        
+        .text-slide-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .text-slide-desc {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .text-slide-detail {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-top: 20px;
         }
         
         /* 탭 메뉴 */
@@ -256,7 +315,7 @@
         
         .recent-search {
             margin-bottom: 20px;
-            display: none; /* 최근 검색어 숨김 */
+            display: none;
         }
         
         .search-tag {
@@ -359,14 +418,23 @@
                 width: 300px;
             }
             
-            .header .container .row {
-                position: relative;
+            .text-slide {
+                height: 400px;
+                padding: 20px;
+            }
+            
+            .text-slide-title {
+                font-size: 24px;
+            }
+            
+            .text-slide-desc {
+                font-size: 16px;
             }
         }
 
         /* 역사 페이지 특화 스타일 */
         .history-hero, .activity-hero {
-            background: linear-gradient(rgba(27, 79, 159, 0.9), rgba(27, 79, 159, 0.8)), url('https://via.placeholder.com/1200x400');
+            background: linear-gradient(rgba(27, 79, 159, 0.9), rgba(27, 79, 159, 0.8)), url('https://via.placeholder.com/1200x400/2e86de/ffffff?text=동아리+역사');
             background-size: cover;
             background-position: center;
             color: white;
@@ -406,6 +474,7 @@
             object-fit: cover;
             margin-bottom: 15px;
             border: 5px solid var(--secondary-color);
+            background-color: #e9ecef;
         }
 
         .achievement-list {
@@ -462,6 +531,7 @@
             height: 500px;
             object-fit: cover;
             display: block;
+            background-color: #e9ecef;
         }
 
         .slide-content {
@@ -719,7 +789,7 @@
         </div>
         
         <div class="menu-section">
-            <h6 class="menu-section-title">미니게ーム</h6>
+            <h6 class="menu-section-title">미니게임</h6>
             <a href="#" class="menu-link">제비뽑기</a>
             <a href="#" class="menu-link">사다리타기</a>
             <a href="#" class="menu-link">룰렛</a>
@@ -730,31 +800,34 @@
     <div class="container">
         <!-- 홈 섹션 -->
         <div id="home-section" class="content-section active">
-            <!-- 이미지 슬라이더 -->
+            <!-- 텍스트 슬라이더 -->
             <div class="slider-container">
                 <div class="slides">
                     <div class="slide">
-                        <div class="slide-counter">1 / 7</div>
-                        <img src="https://via.placeholder.com/1000x500/1b4f9f/ffffff?text=2023+AI%EC%9C%B5%ED%95%A9%EA%B5%90%EC%9C%A1%EC%BA%A0%ED%94%84" alt="2023 AI융합교육캠프">
-                        <div class="slide-content">
-                            <h3 class="slide-title">2023학년도 초·중등 연계 AI융합교육캠프</h3>
-                            <p class="slide-desc">9.2 ~ 8일 08:51~15:46 참조</p>
+                        <div class="text-slide">
+                            <div class="text-slide-content">
+                                <h3 class="text-slide-title">2023학년도 초·중등 연계 AI융합교육캠프</h3>
+                                <p class="text-slide-desc">9.2 ~ 8일 08:51~15:46 참조</p>
+                                <p class="text-slide-detail">폴처라 시음합교육실</p>
+                            </div>
                         </div>
                     </div>
                     <div class="slide">
-                        <div class="slide-counter">2 / 7</div>
-                        <img src="https://via.placeholder.com/1000x500/2e86de/ffffff?text=2024+%ED%95%B4%EC%BB%A4%ED%86%A4+%EC%BA%A0%ED%94%84" alt="2024 해커톤 캠프">
-                        <div class="slide-content">
-                            <h3 class="slide-title">KOREAN INTERNATIONAL SCHOOL</h3>
-                            <p class="slide-desc">2024년 중고 SW융합 해커톤 캠프</p>
+                        <div class="text-slide" style="background: linear-gradient(135deg, #2e86de, #00cec9);">
+                            <div class="text-slide-content">
+                                <h3 class="text-slide-title">KOREAN INTERNATIONAL SCHOOL</h3>
+                                <p class="text-slide-desc">2024년 중고 SW융합 해커톤 캠프</p>
+                                <p class="text-slide-detail">일시: 2024년 11월 23일 토요일 08:00</p>
+                                <p class="text-slide-detail">장소: 신한정보관 | 주최: 호치민시한국국제학교</p>
+                            </div>
                         </div>
                     </div>
                     <div class="slide">
-                        <div class="slide-counter">3 / 7</div>
-                        <img src="https://via.placeholder.com/1000x500/ff9f43/ffffff?text=SW3%ED%95%99+%ED%95%B4%EA%B0%80%EB%A1%A0" alt="SW3학 해가론">
-                        <div class="slide-content">
-                            <h3 class="slide-title">SW3학 해가론</h3>
-                            <p class="slide-desc">원시: 2023년 11월 24일 09:00-13:00</p>
+                        <div class="text-slide" style="background: linear-gradient(135deg, #ff9f43, #e74c3c);">
+                            <div class="text-slide-content">
+                                <h3 class="text-slide-title">2025학년도 학습동 연계 사용한 교육과목</h3>
+                                <p class="text-slide-desc">다양한 교육과목을 통해 창의력과 문제 해결 능력을 키웁니다</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -837,7 +910,7 @@
                             <p>이에 따라 학교 내 컴퓨터실을 중심으로 의지가 있는 학생들을 모아 헬로월드를 설립하였으며, 프로그래밍 기초 학습과 프로젝트 활동을 중심으로 운영이 시작되었습니다.</p>
                         </div>
                         <div class="col-md-6">
-                            <img src="https://via.placeholder.com/500x300" alt="동아리 초창기 이미지" class="img-fluid rounded">
+                            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="동아리 초창기 이미지" class="img-fluid rounded" onerror="handleImageError(this)">
                         </div>
                     </div>
                 </div>
@@ -852,7 +925,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="teacher-profile">
-                            <img src="https://via.placeholder.com/150" alt="이유준 선생님" class="teacher-img">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="이유준 선생님" class="teacher-img" onerror="handleImageError(this)">
                             <h5>이유준 선생님</h5>
                             <p class="text-muted">2023년 동아리 지도교사로 합류</p>
                             <p>프로젝트 기반 학습과 협력적 문제 해결을 중점적으로 지도하고 있습니다.</p>
@@ -878,7 +951,7 @@
                         <p>헬로월드의 목적은 단순히 프로그래밍 능력을 기르는 것에 그치지 않고, 창의적이고 혁신적인 문제 해결력을 키워 미래 사회의 변화를 주도할 수 있는 인재를 양성하는 것입니다. 또한, 장기적으로 학교를 대표하는 ICT 동아리로서, 나아가 지역과 사회에 기여할 수 있는 소프트웨어 공동체로 성장하는 것을 비전으로 삼고 있습니다.</p>
                     </div>
                     <div class="col-md-4">
-                        <img src="https://via.placeholder.com/400x250" alt="2025년 동아리 전성기" class="img-fluid rounded">
+                        <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="2025년 동아리 전성기" class="img-fluid rounded" onerror="handleImageError(this)">
                     </div>
                 </div>
                 
@@ -1065,7 +1138,7 @@
             <div class="row mt-4">
                 <div class="col-md-4 mb-4">
                     <div class="card">
-                        <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="2023 AI융합교육캠프">
+                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="2023 AI융합교육캠프" onerror="handleImageError(this)">
                         <div class="card-body">
                             <h5 class="card-title">2023 AI융합교육캠프</h5>
                             <p class="card-text">초·중등 연계 AI융합교육캠프 활동 모습</p>
@@ -1074,7 +1147,7 @@
                 </div>
                 <div class="col-md-4 mb-4">
                     <div class="card">
-                        <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="2024 해커톤 캠프">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="2024 해커톤 캠프" onerror="handleImageError(this)">
                         <div class="card-body">
                             <h5 class="card-title">2024 해커톤 캠프</h5>
                             <p class="card-text">중고 SW융합 해커톤 캠프에서의 열정적인 작업 모습</p>
@@ -1083,7 +1156,7 @@
                 </div>
                 <div class="col-md-4 mb-4">
                     <div class="card">
-                        <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="SW3학 해가론">
+                        <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="SW3학 해가론" onerror="handleImageError(this)">
                         <div class="card-body">
                             <h5 class="card-title">SW3학 해가론</h5>
                             <p class="card-text">2023년 11월 24일 진행된 해가론 발표회</p>
@@ -1153,6 +1226,22 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+        // 이미지 로드 실패 처리 함수
+        function handleImageError(img) {
+            console.error('이미지를 로드할 수 없습니다: ', img.src);
+            
+            // 대체 요소 생성
+            const fallbackDiv = document.createElement('div');
+            fallbackDiv.className = 'img-fallback';
+            fallbackDiv.innerHTML = '<i class="bi bi-image"></i><div>이미지를 불러올 수 없습니다</div>';
+            
+            // 이미지 뒤에 대체 요소 삽입
+            img.parentNode.insertBefore(fallbackDiv, img.nextSibling);
+            
+            // 이미지 숨기기
+            img.style.display = 'none';
+        }
+
         // 메뉴 토글 기능
         document.getElementById('menuToggle').addEventListener('click', function() {
             document.getElementById('fullMenu').classList.add('open');
@@ -1190,6 +1279,9 @@
                     if (currentNavItem) {
                         currentNavItem.classList.add('active');
                     }
+
+                    // 페이지 상단으로 스크롤
+                    window.scrollTo(0, 0);
                 }
             });
         });
@@ -1300,6 +1392,599 @@
                 }
             });
         }
+
+        // 페이지 로드 시 모든 이미지에 error 이벤트 리스너 추가
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                // 이미 로드 실패한 이미지 처리
+                if (!img.complete || img.naturalHeight === 0) {
+                    handleImageError(img);
+                }
+                
+                // 앞으로 로드 실패할 이미지를 위해 이벤트 리스너 추가
+                img.addEventListener('error', function() {
+                    handleImageError(this);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>헬로월드 동아리 - 소프트웨어 교육의 시작</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <style>
+        /* 기존 CSS 스타일은 여기에 유지 */
+        /* ... 기존 CSS ... */
+
+        /* 게임 섹션 특화 스타일 */
+        .game-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .game-tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            background: #f1f1f1;
+            margin-right: 5px;
+            border-radius: 5px 5px 0 0;
+            font-weight: 500;
+        }
+        
+        .game-tab.active {
+            background: var(--main-color);
+            color: white;
+        }
+        
+        .game-content {
+            display: none;
+            padding: 20px;
+            background: white;
+            border-radius: 0 0 5px 5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .game-content.active {
+            display: block;
+        }
+        
+        /* 사다리타기 스타일 */
+        .ladder-input-section {
+            margin-bottom: 20px;
+        }
+        
+        .input-group {
+            margin-bottom: 10px;
+        }
+        
+        .ladder-container {
+            position: relative;
+            width: 100%;
+            overflow-x: auto;
+            margin: 20px 0;
+            padding: 20px 0;
+        }
+        
+        .ladder {
+            display: flex;
+            justify-content: space-between;
+            min-width: 100%;
+            position: relative;
+            height: 300px;
+        }
+        
+        .participants, .results {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+        
+        .participant, .result {
+            padding: 10px 15px;
+            background: var(--light-color);
+            border-radius: 5px;
+            margin: 5px 0;
+            text-align: center;
+            min-width: 100px;
+        }
+        
+        .lines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .horizontal-line {
+            position: absolute;
+            height: 2px;
+            background: var(--main-color);
+            transform-origin: 0 0;
+        }
+        
+        .vertical-line {
+            position: absolute;
+            width: 2px;
+            background: var(--main-color);
+            top: 0;
+            bottom: 0;
+        }
+        
+        /* 돌림판 스타일 */
+        .wheel-container {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            margin: 0 auto;
+        }
+        
+        .wheel {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+            border: 10px solid #ddd;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+            transition: transform 4s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+        }
+        
+        .wheel-item {
+            position: absolute;
+            width: 50%;
+            height: 50%;
+            transform-origin: bottom right;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 40px;
+            box-sizing: border-box;
+            color: white;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        
+        .wheel-pointer {
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 50px;
+            background: var(--accent-color);
+            clip-path: polygon(50% 100%, 0 0, 100% 0);
+            z-index: 10;
+        }
+        
+        .wheel-input-section {
+            margin-bottom: 20px;
+        }
+        
+        .wheel-result {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--main-color);
+            min-height: 40px;
+        }
+        
+        /* 반응형 조정 */
+        @media (max-width: 768px) {
+            .wheel-container {
+                width: 300px;
+                height: 300px;
+            }
+            
+            .participant, .result {
+                min-width: 80px;
+                font-size: 14px;
+                padding: 8px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 상단 바, 헤더, 전체 메뉴 패널 등 기존 코드는 유지 -->
+    <!-- ... 기존 HTML ... -->
+
+    <!-- 게임 섹션 -->
+    <div id="games-section" class="content-section">
+        <div class="main-banner">
+            <h1>미니게임</h1>
+            <p class="lead">재미있는 미니게임으로 즐거운 시간 보내세요!</p>
+        </div>
+        
+        <div class="container mt-5">
+            <h2 class="section-title">미니게임</h2>
+            
+            <!-- 게임 탭 메뉴 -->
+            <div class="game-tabs">
+                <div class="game-tab active" data-game="ladder">사다리타기</div>
+                <div class="game-tab" data-game="wheel">돌림판</div>
+            </div>
+            
+            <!-- 사다리타기 게임 -->
+            <div id="ladder-game" class="game-content active">
+                <h3>사다리타기</h3>
+                <p>참가자와 결과를 입력하고 사다리를 타보세요!</p>
+                
+                <div class="ladder-input-section">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <h5>참가자</h5>
+                            <div id="participants-list">
+                                <div class="input-group">
+                                    <input type="text" class="form-control participant-input" placeholder="참가자 이름" value="철수">
+                                    <button class="btn btn-outline-danger remove-btn">삭제</button>
+                                </div>
+                                <div class="input-group mt-2">
+                                    <input type="text" class="form-control participant-input" placeholder="참가자 이름" value="영희">
+                                    <button class="btn btn-outline-danger remove-btn">삭제</button>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary mt-2" id="add-participant">참가자 추가</button>
+                        </div>
+                        
+                        <div class="col-md-5 offset-md-2">
+                            <h5>결과</h5>
+                            <div id="results-list">
+                                <div class="input-group">
+                                    <input type="text" class="form-control result-input" placeholder="결과" value="청소">
+                                    <button class="btn btn-outline-danger remove-btn">삭제</button>
+                                </div>
+                                <div class="input-group mt-2">
+                                    <input type="text" class="form-control result-input" placeholder="결과" value="설거지">
+                                    <button class="btn btn-outline-danger remove-btn">삭제</button>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary mt-2" id="add-result">결과 추가</button>
+                        </div>
+                    </div>
+                    
+                    <div class="row mt-4">
+                        <div class="col-md-12 text-center">
+                            <button class="btn btn-success btn-lg" id="draw-ladder">사다리 그리기</button>
+                            <button class="btn btn-warning btn-lg ms-2" id="start-ladder">사다리 타기</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="ladder-container">
+                    <div class="ladder">
+                        <div class="participants" id="ladder-participants"></div>
+                        <div class="lines" id="ladder-lines"></div>
+                        <div class="results" id="ladder-results"></div>
+                    </div>
+                </div>
+                
+                <div class="row mt-4">
+                    <div class="col-md-12">
+                        <h4>결과</h4>
+                        <div id="ladder-result"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 돌림판 게임 -->
+            <div id="wheel-game" class="game-content">
+                <h3>돌림판</h3>
+                <p>항목을 입력하고 돌림판을 돌려보세요!</p>
+                
+                <div class="wheel-input-section">
+                    <div class="row">
+                        <div class="col-md-8 mx-auto">
+                            <h5>항목 추가</h5>
+                            <div id="wheel-items-list">
+                                <div class="input-group mb-2">
+                                    <input type="text" class="form-control wheel-item-input" placeholder="항목" value="피자">
+                                    <input type="color" class="form-control form-control-color wheel-color-input" value="#ff6384">
+                                    <button class="btn btn-outline-danger remove-btn">삭제</button>
+                                </div>
+                                <div class="input-group mb-2">
+                                    <input type="text" class="form-control wheel-item-input" placeholder="항목" value="치킨">
+                                    <input type="color" class="form-control form-control-color wheel-color-input" value="#36a2eb">
+                                    <button class="btn btn-outline-danger remove-btn">삭제</button>
+                                </div>
+                                <div class="input-group mb-2">
+                                    <input type="text" class="form-control wheel-item-input" placeholder="항목" value="햄버거">
+                                    <input type="color" class="form-control form-control-color wheel-color-input" value="#ffce56">
+                                    <button class="btn btn-outline-danger remove-btn">삭제</button>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary mt-2" id="add-wheel-item">항목 추가</button>
+                        </div>
+                    </div>
+                    
+                    <div class="row mt-4">
+                        <div class="col-md-12 text-center">
+                            <button class="btn btn-success btn-lg" id="draw-wheel">돌림판 그리기</button>
+                            <button class="btn btn-warning btn-lg ms-2" id="spin-wheel">돌림판 돌리기</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mt-4">
+                    <div class="col-md-8 mx-auto">
+                        <div class="wheel-container">
+                            <div class="wheel-pointer"></div>
+                            <div class="wheel" id="wheel"></div>
+                        </div>
+                        <div class="wheel-result" id="wheel-result"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 및 기타 섹션들 -->
+    <!-- ... 기존 HTML ... -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // 기존 JavaScript 코드는 여기에 유지
+        // ... 기존 JavaScript ...
+
+        // 게임 탭 전환 기능
+        const gameTabs = document.querySelectorAll('.game-tab');
+        const gameContents = document.querySelectorAll('.game-content');
+
+        gameTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const gameId = tab.getAttribute('data-game');
+                
+                // 모든 탭과 콘텐츠 비활성화
+                gameTabs.forEach(t => t.classList.remove('active'));
+                gameContents.forEach(c => c.classList.remove('active'));
+                
+                // 선택한 탭과 콘텐츠 활성화
+                tab.classList.add('active');
+                document.getElementById(`${gameId}-game`).classList.add('active');
+            });
+        });
+
+        // 사다리타기 게임 기능
+        document.getElementById('add-participant').addEventListener('click', () => {
+            const newInput = document.createElement('div');
+            newInput.className = 'input-group mt-2';
+            newInput.innerHTML = `
+                <input type="text" class="form-control participant-input" placeholder="참가자 이름">
+                <button class="btn btn-outline-danger remove-btn">삭제</button>
+            `;
+            document.getElementById('participants-list').appendChild(newInput);
+            addRemoveListeners();
+        });
+
+        document.getElementById('add-result').addEventListener('click', () => {
+            const newInput = document.createElement('div');
+            newInput.className = 'input-group mt-2';
+            newInput.innerHTML = `
+                <input type="text" class="form-control result-input" placeholder="결과">
+                <button class="btn btn-outline-danger remove-btn">삭제</button>
+            `;
+            document.getElementById('results-list').appendChild(newInput);
+            addRemoveListeners();
+        });
+
+        function addRemoveListeners() {
+            document.querySelectorAll('.remove-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    if (this.parentElement.parentElement.childElementCount > 1) {
+                        this.parentElement.remove();
+                    }
+                });
+            });
+        }
+
+        // 초기 삭제 버튼 리스너 추가
+        addRemoveListeners();
+
+        document.getElementById('draw-ladder').addEventListener('click', drawLadder);
+        document.getElementById('start-ladder').addEventListener('click', startLadder);
+
+        function drawLadder() {
+            const participants = Array.from(document.querySelectorAll('.participant-input')).map(input => input.value.trim()).filter(Boolean);
+            const results = Array.from(document.querySelectorAll('.result-input')).map(input => input.value.trim()).filter(Boolean);
+            
+            if (participants.length === 0 || results.length === 0) {
+                alert('참가자와 결과를 최소 한 개 이상 입력해주세요.');
+                return;
+            }
+            
+            if (participants.length !== results.length) {
+                alert('참가자와 결과의 개수가 같아야 합니다.');
+                return;
+            }
+            
+            // 참가자와 결과 표시
+            const participantsEl = document.getElementById('ladder-participants');
+            const resultsEl = document.getElementById('ladder-results');
+            
+            participantsEl.innerHTML = '';
+            resultsEl.innerHTML = '';
+            
+            participants.forEach(participant => {
+                const div = document.createElement('div');
+                div.className = 'participant';
+                div.textContent = participant;
+                participantsEl.appendChild(div);
+            });
+            
+            results.forEach(result => {
+                const div = document.createElement('div');
+                div.className = 'result';
+                div.textContent = result;
+                resultsEl.appendChild(div);
+            });
+            
+            // 사다리 라인 그리기
+            drawLadderLines(participants.length);
+        }
+
+        function drawLadderLines(count) {
+            const linesEl = document.getElementById('ladder-lines');
+            linesEl.innerHTML = '';
+            
+            const containerWidth = document.querySelector('.ladder').offsetWidth;
+            const participantWidth = 100; // 참가자 요소의 너비
+            const spacing = (containerWidth - participantWidth * 2) / (count - 1);
+            
+            // 수직선 그리기
+            for (let i = 0; i < count; i++) {
+                const x = participantWidth + i * spacing;
+                const line = document.createElement('div');
+                line.className = 'vertical-line';
+                line.style.left = `${x}px`;
+                linesEl.appendChild(line);
+            }
+            
+            // 수평선 그리기 (랜덤 위치에)
+            const horizontalLineCount = count * 2;
+            const lineHeight = 300; // 사다리 높이
+            
+            for (let i = 0; i < horizontalLineCount; i++) {
+                const y = Math.random() * (lineHeight - 50) + 25; // 25에서 275 사이
+                const lineIndex = Math.floor(Math.random() * (count - 1));
+                
+                const x1 = participantWidth + lineIndex * spacing;
+                const x2 = participantWidth + (lineIndex + 1) * spacing;
+                
+                const line = document.createElement('div');
+                line.className = 'horizontal-line';
+                line.style.top = `${y}px`;
+                line.style.left = `${x1}px`;
+                line.style.width = `${x2 - x1}px`;
+                linesEl.appendChild(line);
+            }
+        }
+
+        function startLadder() {
+            const participants = Array.from(document.querySelectorAll('.participant-input')).map(input => input.value.trim()).filter(Boolean);
+            const results = Array.from(document.querySelectorAll('.result-input')).map(input => input.value.trim()).filter(Boolean);
+            
+            if (participants.length === 0 || results.length === 0) {
+                alert('먼저 사다리를 그려주세요.');
+                return;
+            }
+            
+            // 결과 계산 (간단한 랜덤 매칭)
+            const shuffledResults = [...results].sort(() => Math.random() - 0.5);
+            const resultMap = {};
+            
+            participants.forEach((participant, index) => {
+                resultMap[participant] = shuffledResults[index];
+            });
+            
+            // 결과 표시
+            const resultEl = document.getElementById('ladder-result');
+            resultEl.innerHTML = '<ul class="list-group"></ul>';
+            
+            const listEl = resultEl.querySelector('ul');
+            for (const [participant, result] of Object.entries(resultMap)) {
+                const li = document.createElement('li');
+                li.className = 'list-group-item';
+                li.innerHTML = `<strong>${participant}</strong> → ${result}`;
+                listEl.appendChild(li);
+            }
+        }
+
+        // 돌림판 게임 기능
+        document.getElementById('add-wheel-item').addEventListener('click', () => {
+            const newInput = document.createElement('div');
+            newInput.className = 'input-group mb-2';
+            newInput.innerHTML = `
+                <input type="text" class="form-control wheel-item-input" placeholder="항목">
+                <input type="color" class="form-control form-control-color wheel-color-input" value="${getRandomColor()}">
+                <button class="btn btn-outline-danger remove-btn">삭제</button>
+            `;
+            document.getElementById('wheel-items-list').appendChild(newInput);
+            addRemoveListeners();
+        });
+
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        document.getElementById('draw-wheel').addEventListener('click', drawWheel);
+        document.getElementById('spin-wheel').addEventListener('click', spinWheel);
+
+        function drawWheel() {
+            const items = Array.from(document.querySelectorAll('.wheel-item-input')).map(input => input.value.trim()).filter(Boolean);
+            const colors = Array.from(document.querySelectorAll('.wheel-color-input')).map(input => input.value);
+            
+            if (items.length < 2) {
+                alert('항목을 최소 2개 이상 입력해주세요.');
+                return;
+            }
+            
+            const wheelEl = document.getElementById('wheel');
+            wheelEl.innerHTML = '';
+            
+            const angle = 360 / items.length;
+            
+            items.forEach((item, index) => {
+                const itemEl = document.createElement('div');
+                itemEl.className = 'wheel-item';
+                itemEl.textContent = item;
+                itemEl.style.backgroundColor = colors[index % colors.length];
+                itemEl.style.transform = `rotate(${index * angle}deg)`;
+                wheelEl.appendChild(itemEl);
+            });
+        }
+
+        function spinWheel() {
+            const items = Array.from(document.querySelectorAll('.wheel-item-input')).map(input => input.value.trim()).filter(Boolean);
+            
+            if (items.length < 2) {
+                alert('먼저 돌림판을 그려주세요.');
+                return;
+            }
+            
+            const wheelEl = document.getElementById('wheel');
+            const resultEl = document.getElementById('wheel-result');
+            
+            // 회전 각도 계산 (최소 5바퀴 이상 돌게)
+            const rotations = 5 + Math.random() * 5; // 5~10바퀴
+            const angle = rotations * 360;
+            
+            // 랜덤으로 결과 선택
+            const resultIndex = Math.floor(Math.random() * items.length);
+            const itemAngle = 360 / items.length;
+            
+            // 결과 각도 계산 (포인터가 특정 항목을 가리키도록)
+            const finalAngle = angle - (resultIndex * itemAngle + itemAngle / 2);
+            
+            // 돌림판 회전
+            wheelEl.style.transform = `rotate(${finalAngle}deg)`;
+            
+            // 결과 표시 (애니메이션 종료 후)
+            setTimeout(() => {
+                resultEl.textContent = `결과: ${items[resultIndex]}`;
+            }, 4000); // 회전 애니메이션 시간과 일치
+        }
+
+        // 초기 화면에서 기본 돌림판 그리기
+        document.addEventListener('DOMContentLoaded', () => {
+            if (document.getElementById('wheel-game')) {
+                setTimeout(drawWheel, 100);
+            }
+        });
     </script>
 </body>
 </html>
