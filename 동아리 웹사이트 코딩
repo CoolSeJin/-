@@ -105,7 +105,7 @@
         
         /* 메인 배너 */
         .main-banner {
-            background: linear-gradient(rgba(27, 79, 159, 0.8), rgba(27, 79, 159, 0.8)), url('https://via.placeholder.com/1200x400/1b4f9f/ffffff?text=헬로월드+동아리');
+            background: linear-gradient(rgba(27, 79, 159, 0.8), rgba(27, 79, 159, 0.8));
             background-size: cover;
             background-position: center;
             color: white;
@@ -434,7 +434,7 @@
 
         /* 역사 페이지 특화 스타일 */
         .history-hero, .activity-hero {
-            background: linear-gradient(rgba(27, 79, 159, 0.9), rgba(27, 79, 159, 0.8)), url('https://via.placeholder.com/1200x400/2e86de/ffffff?text=동아리+역사');
+            background: linear-gradient(rgba(27, 79, 159, 0.9), rgba(27, 79, 159, 0.8));
             background-size: cover;
             background-position: center;
             color: white;
@@ -632,6 +632,7 @@
             flex-wrap: wrap;
             gap: 10px;
             margin-bottom: 30px;
+            justify-content: center;
         }
 
         .year-tab {
@@ -699,6 +700,327 @@
             font-size: 48px;
             color: var(--main-color);
             margin-bottom: 15px;
+        }
+
+        /* 관리자 패널 스타일 */
+        .admin-panel {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 2000;
+        }
+        
+        .admin-toggle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--accent-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .admin-toggle:hover {
+            transform: scale(1.1);
+        }
+        
+        .admin-menu {
+            position: absolute;
+            bottom: 70px;
+            right: 0;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            padding: 15px;
+            width: 250px;
+            display: none;
+        }
+        
+        .admin-menu.open {
+            display: block;
+        }
+        
+        .admin-menu h5 {
+            color: var(--main-color);
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .admin-option {
+            padding: 10px;
+            margin-bottom: 8px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .admin-option:hover {
+            background: var(--main-color);
+            color: white;
+        }
+        
+        /* 모달 스타일 */
+        .modal-content {
+            border-radius: 10px;
+            border: none;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+        
+        .modal-header {
+            background: var(--main-color);
+            color: white;
+            border-radius: 10px 10px 0 0;
+        }
+        
+        .carousel-preview {
+            width: 100%;
+            height: 200px;
+            border: 2px dashed #ddd;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+        
+        .carousel-preview img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        
+        .upload-status {
+            margin-top: 10px;
+            font-size: 14px;
+            text-align: center;
+        }
+        
+        .carousel-list {
+            max-height: 300px;
+            overflow-y: auto;
+            margin-top: 20px;
+        }
+        
+        .carousel-item-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .carousel-thumb {
+            width: 100px;
+            height: 70px;
+            border-radius: 5px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+        
+        .carousel-thumb.active {
+            border-color: var(--accent-color);
+        }
+        
+        .carousel-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .carousel-thumb .remove-btn {
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            background: rgba(255,0,0,0.7);
+            color: white;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+        /* 게임 섹션 특화 스타일 */
+        .game-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #ddd;
+            justify-content: center;
+        }
+        
+        .game-tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            background: #f1f1f1;
+            margin-right: 5px;
+            border-radius: 5px 5px 0 0;
+            font-weight: 500;
+        }
+        
+        .game-tab.active {
+            background: var(--main-color);
+            color: white;
+        }
+        
+        .game-content {
+            display: none;
+            padding: 20px;
+            background: white;
+            border-radius: 0 0 5px 5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .game-content.active {
+            display: block;
+        }
+        
+        /* 사다리타기 스타일 */
+        .ladder-input-section {
+            margin-bottom: 20px;
+        }
+        
+        .input-group {
+            margin-bottom: 10px;
+        }
+        
+        .ladder-container {
+            position: relative;
+            width: 100%;
+            overflow-x: auto;
+            margin: 20px 0;
+            padding: 20px 0;
+        }
+        
+        .ladder {
+            display: flex;
+            justify-content: space-between;
+            min-width: 100%;
+            position: relative;
+            height: 300px;
+        }
+        
+        .participants, .results {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+        
+        .participant, .result {
+            padding: 10px 15px;
+            background: var(--light-color);
+            border-radius: 5px;
+            margin: 5px 0;
+            text-align: center;
+            min-width: 100px;
+        }
+        
+        .lines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .horizontal-line {
+            position: absolute;
+            height: 2px;
+            background: var(--main-color);
+            transform-origin: 0 0;
+        }
+        
+        .vertical-line {
+            position: absolute;
+            width: 2px;
+            background: var(--main-color);
+            top: 0;
+            bottom: 0;
+        }
+        
+        /* 돌림판 스타일 */
+        .wheel-container {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            margin: 0 auto;
+        }
+        
+        .wheel {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+            border: 10px solid #ddd;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+            transition: transform 4s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+        }
+        
+        .wheel-item {
+            position: absolute;
+            width: 50%;
+            height: 50%;
+            transform-origin: bottom right;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 40px;
+            box-sizing: border-box;
+            color: white;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        
+        .wheel-pointer {
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 50px;
+            background: var(--accent-color);
+            clip-path: polygon(50% 100%, 0 0, 100% 0);
+            z-index: 10;
+        }
+        
+        .wheel-input-section {
+            margin-bottom: 20px;
+        }
+        
+        .wheel-result {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--main-color);
+            min-height: 40px;
+        }
+        
+        /* 반응형 조정 */
+        @media (max-width: 768px) {
+            .wheel-container {
+                width: 300px;
+                height: 300px;
+            }
+            
+            .participant, .result {
+                min-width: 80px;
+                font-size: 14px;
+                padding: 8px 10px;
+            }
         }
     </style>
 </head>
@@ -796,6 +1118,62 @@
         </div>
     </div>
     
+    <!-- 관리자 패널 (오른쪽 하단에 고정) -->
+    <div class="admin-panel">
+        <div class="admin-toggle" id="adminToggle">
+            <i class="bi bi-gear"></i>
+        </div>
+        <div class="admin-menu" id="adminMenu">
+            <h5>관리자 메뉴</h5>
+            <div class="admin-option" data-bs-toggle="modal" data-bs-target="#carouselModal">
+                <i class="bi bi-images"></i> 캐러셀 이미지 관리
+            </div>
+            <div class="admin-option">
+                <i class="bi bi-plus-circle"></i> 새 소식 추가
+            </div>
+            <div class="admin-option">
+                <i class="bi bi-people"></i> 회원 관리
+            </div>
+        </div>
+    </div>
+
+    <!-- 캐러셀 관리 모달 -->
+    <div class="modal fade" id="carouselModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">캐러셀 이미지 관리</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="carouselUpload" class="form-label">새 이미지 업로드</label>
+                        <input class="form-control" type="file" id="carouselUpload" accept="image/*">
+                        <div class="carousel-preview mt-2" id="carouselPreview">
+                            <div class="text-center text-muted">
+                                <i class="bi bi-image" style="font-size: 48px;"></i>
+                                <p>이미지 미리보기</p>
+                            </div>
+                        </div>
+                        <div class="upload-status" id="uploadStatus"></div>
+                        <button class="btn btn-primary mt-2 w-100" id="addCarouselBtn" disabled>캐러셀에 추가</button>
+                    </div>
+                    
+                    <div class="carousel-list">
+                        <h6>현재 캐러셀 이미지 목록</h6>
+                        <div class="carousel-item-list" id="carouselItemList">
+                            <!-- 동적으로 생성될 캐러셀 이미지 목록 -->
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+                    <button type="button" class="btn btn-primary" id="saveCarouselBtn">변경사항 저장</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- 메인 콘텐츠 -->
     <div class="container">
         <!-- 홈 섹션 -->
@@ -823,11 +1201,13 @@
                         </div>
                     </div>
                     <div class="slide">
-                        <div class="text-slide" style="background: linear-gradient(135deg, #ff9f43, #e74c3c);">
-                            <div class="text-slide-content">
-                                <h3 class="text-slide-title">2025학년도 학습동 연계 사용한 교육과목</h3>
-                                <p class="text-slide-desc">다양한 교육과목을 통해 창의력과 문제 해결 능력을 키웁니다</p>
-                            </div>
+                        <div class="img-fallback">
+                            <i class="bi bi-image"></i>
+                            <div>이미지를 불러올 수 없습니다</div>
+                        </div>
+                        <div class="slide-content">
+                            <h3 class="slide-title">2025학년도 학습동 연계 사용한 교육과목</h3>
+                            <p class="slide-desc">다양한 교육과목을 통해 창의력과 문제 해결 능력을 키웁니다</p>
                         </div>
                     </div>
                 </div>
@@ -907,10 +1287,13 @@
                     <div class="row">
                         <div class="col-md-6">
                             <p>헬로월드 동아리는 2020년 오동철 선생님에 의해 창단된 소프트웨어 동아리입니다. 당시 오동철 선생님은 학생들이 교과 과정 속 이론적 정보 교육에만 머무르지 않고, 실제 소프트웨어를 다루며 개발 경험을 쌓을 수 있는 장을 마련하고자 했습니다.</p>
-                            <p>이에 따라 학교 내 컴퓨터실을 중심으로 의지가 있는 학생들을 모아 헬로월드를 설립하였으며, 프로그래밍 기초 학습과 프로젝트 활동을 중심으로 운영이 시작되었습니다.</p>
+                            <p>이에 따라 학교 내 컴퓨터실을 중심로 의지가 있는 학생들을 모아 헬로월드를 설립하였으며, 프로그래밍 기초 학습과 프로젝트 활동을 중심으로 운영이 시작되었습니다.</p>
                         </div>
                         <div class="col-md-6">
-                            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="동아리 초창기 이미지" class="img-fluid rounded" onerror="handleImageError(this)">
+                            <div class="img-fallback">
+                                <i class="bi bi-image"></i>
+                                <div>이미지를 불러올 수 없습니다</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -925,7 +1308,10 @@
                     </div>
                     <div class="col-md-6">
                         <div class="teacher-profile">
-                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="이유준 선생님" class="teacher-img" onerror="handleImageError(this)">
+                            <div class="img-fallback">
+                                <i class="bi bi-image"></i>
+                                <div>이미지를 불러올 수 없습니다</div>
+                            </div>
                             <h5>이유준 선생님</h5>
                             <p class="text-muted">2023년 동아리 지도교사로 합류</p>
                             <p>프로젝트 기반 학습과 협력적 문제 해결을 중점적으로 지도하고 있습니다.</p>
@@ -951,7 +1337,10 @@
                         <p>헬로월드의 목적은 단순히 프로그래밍 능력을 기르는 것에 그치지 않고, 창의적이고 혁신적인 문제 해결력을 키워 미래 사회의 변화를 주도할 수 있는 인재를 양성하는 것입니다. 또한, 장기적으로 학교를 대표하는 ICT 동아리로서, 나아가 지역과 사회에 기여할 수 있는 소프트웨어 공동체로 성장하는 것을 비전으로 삼고 있습니다.</p>
                     </div>
                     <div class="col-md-4">
-                        <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="2025년 동아리 전성기" class="img-fluid rounded" onerror="handleImageError(this)">
+                        <div class="img-fallback">
+                            <i class="bi bi-image"></i>
+                            <div>이미지를 불러올 수 없습니다</div>
+                        </div>
                     </div>
                 </div>
                 
@@ -1138,7 +1527,10 @@
             <div class="row mt-4">
                 <div class="col-md-4 mb-4">
                     <div class="card">
-                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="2023 AI융합교육캠프" onerror="handleImageError(this)">
+                        <div class="img-fallback">
+                            <i class="bi bi-image"></i>
+                            <div>이미지를 불러올 수 없습니다</div>
+                        </div>
                         <div class="card-body">
                             <h5 class="card-title">2023 AI융합교육캠프</h5>
                             <p class="card-text">초·중등 연계 AI융합교육캠프 활동 모습</p>
@@ -1147,7 +1539,10 @@
                 </div>
                 <div class="col-md-4 mb-4">
                     <div class="card">
-                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="2024 해커톤 캠프" onerror="handleImageError(this)">
+                        <div class="img-fallback">
+                            <i class="bi bi-image"></i>
+                            <div>이미지를 불러올 수 없습니다</div>
+                        </div>
                         <div class="card-body">
                             <h5 class="card-title">2024 해커톤 캠프</h5>
                             <p class="card-text">중고 SW융합 해커톤 캠프에서의 열정적인 작업 모습</p>
@@ -1156,10 +1551,142 @@
                 </div>
                 <div class="col-md-4 mb-4">
                     <div class="card">
-                        <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="SW3학 해가론" onerror="handleImageError(this)">
+                        <div class="img-fallback">
+                            <i class="bi bi-image"></i>
+                            <div>이미지를 불러올 수 없습니다</div>
+                        </div>
                         <div class="card-body">
                             <h5 class="card-title">SW3학 해가론</h5>
                             <p class="card-text">2023년 11월 24일 진행된 해가론 발표회</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 게임 섹션 -->
+        <div id="games-section" class="content-section">
+            <div class="main-banner">
+                <h1>미니게임</h1>
+                <p class="lead">재미있는 미니게임으로 즐거운 시간 보내세요!</p>
+            </div>
+            
+            <div class="container mt-5">
+                <h2 class="section-title">미니게임</h2>
+                
+                <!-- 게임 탭 메뉴 -->
+                <div class="game-tabs">
+                    <div class="game-tab active" data-game="ladder">사다리타기</div>
+                    <div class="game-tab" data-game="wheel">돌림판</div>
+                </div>
+                
+                <!-- 사다리타기 게임 -->
+                <div id="ladder-game" class="game-content active">
+                    <h3>사다리타기</h3>
+                    <p>참가자와 결과를 입력하고 사다리를 타보세요!</p>
+                    
+                    <div class="ladder-input-section">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <h5>참가자</h5>
+                                <div id="participants-list">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control participant-input" placeholder="참가자 이름" value="철수">
+                                        <button class="btn btn-outline-danger remove-btn">삭제</button>
+                                    </div>
+                                    <div class="input-group mt-2">
+                                        <input type="text" class="form-control participant-input" placeholder="참가자 이름" value="영희">
+                                        <button class="btn btn-outline-danger remove-btn">삭제</button>
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary mt-2" id="add-participant">참가자 추가</button>
+                            </div>
+                            
+                            <div class="col-md-5 offset-md-2">
+                                <h5>결과</h5>
+                                <div id="results-list">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control result-input" placeholder="결과" value="청소">
+                                        <button class="btn btn-outline-danger remove-btn">삭제</button>
+                                    </div>
+                                    <div class="input-group mt-2">
+                                        <input type="text" class="form-control result-input" placeholder="결과" value="설거지">
+                                        <button class="btn btn-outline-danger remove-btn">삭제</button>
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary mt-2" id="add-result">결과 추가</button>
+                            </div>
+                        </div>
+                        
+                        <div class="row mt-4">
+                            <div class="col-md-12 text-center">
+                                <button class="btn btn-success btn-lg" id="draw-ladder">사다리 그리기</button>
+                                <button class="btn btn-warning btn-lg ms-2" id="start-ladder">사다리 타기</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="ladder-container">
+                        <div class="ladder">
+                            <div class="participants" id="ladder-participants"></div>
+                            <div class="lines" id="ladder-lines"></div>
+                            <div class="results" id="ladder-results"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="row mt-4">
+                        <div class="col-md-12">
+                            <h4>결과</h4>
+                            <div id="ladder-result"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 돌림판 게임 -->
+                <div id="wheel-game" class="game-content">
+                    <h3>돌림판</h3>
+                    <p>항목을 입력하고 돌림판을 돌려보세요!</p>
+                    
+                    <div class="wheel-input-section">
+                        <div class="row">
+                            <div class="col-md-8 mx-auto">
+                                <h5>항목 추가</h5>
+                                <div id="wheel-items-list">
+                                    <div class="input-group mb-2">
+                                        <input type="text" class="form-control wheel-item-input" placeholder="항목" value="피자">
+                                        <input type="color" class="form-control form-control-color wheel-color-input" value="#ff6384">
+                                        <button class="btn btn-outline-danger remove-btn">삭제</button>
+                                    </div>
+                                    <div class="input-group mb-2">
+                                        <input type="text" class="form-control wheel-item-input" placeholder="항목" value="치킨">
+                                        <input type="color" class="form-control form-control-color wheel-color-input" value="#36a2eb">
+                                        <button class="btn btn-outline-danger remove-btn">삭제</button>
+                                    </div>
+                                    <div class="input-group mb-2">
+                                        <input type="text" class="form-control wheel-item-input" placeholder="항목" value="햄버거">
+                                        <input type="color" class="form-control form-control-color wheel-color-input" value="#ffce56">
+                                        <button class="btn btn-outline-danger remove-btn">삭제</button>
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary mt-2" id="add-wheel-item">항목 추가</button>
+                            </div>
+                        </div>
+                        
+                        <div class="row mt-4">
+                            <div class="col-md-12 text-center">
+                                <button class="btn btn-success btn-lg" id="draw-wheel">돌림판 그리기</button>
+                                <button class="btn btn-warning btn-lg ms-2" id="spin-wheel">돌림판 돌리기</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row mt-4">
+                        <div class="col-md-8 mx-auto">
+                            <div class="wheel-container">
+                                <div class="wheel-pointer"></div>
+                                <div class="wheel" id="wheel"></div>
+                            </div>
+                            <div class="wheel-result" id="wheel-result"></div>
                         </div>
                     </div>
                 </div>
@@ -1178,7 +1705,7 @@
         <div id="projects-section" class="content-section">
             <div class="main-banner">
                 <h1>라온제나 작품</h1>
-                <p class="lead">동아리 회원들의 창의적인 작품들을 소개합니다.</p>
+                <p class="lead>동아리 회원들의 창의적인 작품들을 소개합니다.</p>
             </div>
             <!-- 라온제나 작품 내용 -->
         </div>
@@ -1310,11 +1837,6 @@
             slides.style.transform = `translateX(${-currentIndex * 100}%)`;
             dots.forEach(dot => dot.classList.remove('active'));
             dots[currentIndex].classList.add('active');
-            
-            // 슬라이드 카운터 업데이트
-            document.querySelectorAll('.slide-counter').forEach((counter, i) => {
-                counter.textContent = `${i + 1} / ${slideElements.length}`;
-            });
         }
 
         function moveToSlide(index) {
@@ -1380,361 +1902,6 @@
                 document.getElementById(tab.dataset.year).classList.add('active');
             });
         });
-
-        // 모바일에서 메뉴 토글 기능
-        if (window.innerWidth <= 768) {
-            document.getElementById('menuToggle').addEventListener('click', function() {
-                const navMenu = document.querySelector('.nav-menu');
-                if (navMenu.style.display === 'flex') {
-                    navMenu.style.display = 'none';
-                } else {
-                    navMenu.style.display = 'flex';
-                }
-            });
-        }
-
-        // 페이지 로드 시 모든 이미지에 error 이벤트 리스너 추가
-        document.addEventListener('DOMContentLoaded', function() {
-            const images = document.querySelectorAll('img');
-            images.forEach(img => {
-                // 이미 로드 실패한 이미지 처리
-                if (!img.complete || img.naturalHeight === 0) {
-                    handleImageError(img);
-                }
-                
-                // 앞으로 로드 실패할 이미지를 위해 이벤트 리스너 추가
-                img.addEventListener('error', function() {
-                    handleImageError(this);
-                });
-            });
-        });
-    </script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>헬로월드 동아리 - 소프트웨어 교육의 시작</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    <style>
-        /* 기존 CSS 스타일은 여기에 유지 */
-        /* ... 기존 CSS ... */
-
-        /* 게임 섹션 특화 스타일 */
-        .game-tabs {
-            display: flex;
-            flex-wrap: wrap;
-            margin-bottom: 30px;
-            border-bottom: 1px solid #ddd;
-        }
-        
-        .game-tab {
-            padding: 10px 20px;
-            cursor: pointer;
-            background: #f1f1f1;
-            margin-right: 5px;
-            border-radius: 5px 5px 0 0;
-            font-weight: 500;
-        }
-        
-        .game-tab.active {
-            background: var(--main-color);
-            color: white;
-        }
-        
-        .game-content {
-            display: none;
-            padding: 20px;
-            background: white;
-            border-radius: 0 0 5px 5px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        .game-content.active {
-            display: block;
-        }
-        
-        /* 사다리타기 스타일 */
-        .ladder-input-section {
-            margin-bottom: 20px;
-        }
-        
-        .input-group {
-            margin-bottom: 10px;
-        }
-        
-        .ladder-container {
-            position: relative;
-            width: 100%;
-            overflow-x: auto;
-            margin: 20px 0;
-            padding: 20px 0;
-        }
-        
-        .ladder {
-            display: flex;
-            justify-content: space-between;
-            min-width: 100%;
-            position: relative;
-            height: 300px;
-        }
-        
-        .participants, .results {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-        }
-        
-        .participant, .result {
-            padding: 10px 15px;
-            background: var(--light-color);
-            border-radius: 5px;
-            margin: 5px 0;
-            text-align: center;
-            min-width: 100px;
-        }
-        
-        .lines {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-        
-        .horizontal-line {
-            position: absolute;
-            height: 2px;
-            background: var(--main-color);
-            transform-origin: 0 0;
-        }
-        
-        .vertical-line {
-            position: absolute;
-            width: 2px;
-            background: var(--main-color);
-            top: 0;
-            bottom: 0;
-        }
-        
-        /* 돌림판 스타일 */
-        .wheel-container {
-            position: relative;
-            width: 400px;
-            height: 400px;
-            margin: 0 auto;
-        }
-        
-        .wheel {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            position: relative;
-            overflow: hidden;
-            border: 10px solid #ddd;
-            box-shadow: 0 0 20px rgba(0,0,0,0.2);
-            transition: transform 4s cubic-bezier(0.17, 0.67, 0.83, 0.67);
-        }
-        
-        .wheel-item {
-            position: absolute;
-            width: 50%;
-            height: 50%;
-            transform-origin: bottom right;
-            text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding-top: 40px;
-            box-sizing: border-box;
-            color: white;
-            font-weight: bold;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-        }
-        
-        .wheel-pointer {
-            position: absolute;
-            top: -30px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 30px;
-            height: 50px;
-            background: var(--accent-color);
-            clip-path: polygon(50% 100%, 0 0, 100% 0);
-            z-index: 10;
-        }
-        
-        .wheel-input-section {
-            margin-bottom: 20px;
-        }
-        
-        .wheel-result {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 24px;
-            font-weight: bold;
-            color: var(--main-color);
-            min-height: 40px;
-        }
-        
-        /* 반응형 조정 */
-        @media (max-width: 768px) {
-            .wheel-container {
-                width: 300px;
-                height: 300px;
-            }
-            
-            .participant, .result {
-                min-width: 80px;
-                font-size: 14px;
-                padding: 8px 10px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <!-- 상단 바, 헤더, 전체 메뉴 패널 등 기존 코드는 유지 -->
-    <!-- ... 기존 HTML ... -->
-
-    <!-- 게임 섹션 -->
-    <div id="games-section" class="content-section">
-        <div class="main-banner">
-            <h1>미니게임</h1>
-            <p class="lead">재미있는 미니게임으로 즐거운 시간 보내세요!</p>
-        </div>
-        
-        <div class="container mt-5">
-            <h2 class="section-title">미니게임</h2>
-            
-            <!-- 게임 탭 메뉴 -->
-            <div class="game-tabs">
-                <div class="game-tab active" data-game="ladder">사다리타기</div>
-                <div class="game-tab" data-game="wheel">돌림판</div>
-            </div>
-            
-            <!-- 사다리타기 게임 -->
-            <div id="ladder-game" class="game-content active">
-                <h3>사다리타기</h3>
-                <p>참가자와 결과를 입력하고 사다리를 타보세요!</p>
-                
-                <div class="ladder-input-section">
-                    <div class="row">
-                        <div class="col-md-5">
-                            <h5>참가자</h5>
-                            <div id="participants-list">
-                                <div class="input-group">
-                                    <input type="text" class="form-control participant-input" placeholder="참가자 이름" value="철수">
-                                    <button class="btn btn-outline-danger remove-btn">삭제</button>
-                                </div>
-                                <div class="input-group mt-2">
-                                    <input type="text" class="form-control participant-input" placeholder="참가자 이름" value="영희">
-                                    <button class="btn btn-outline-danger remove-btn">삭제</button>
-                                </div>
-                            </div>
-                            <button class="btn btn-primary mt-2" id="add-participant">참가자 추가</button>
-                        </div>
-                        
-                        <div class="col-md-5 offset-md-2">
-                            <h5>결과</h5>
-                            <div id="results-list">
-                                <div class="input-group">
-                                    <input type="text" class="form-control result-input" placeholder="결과" value="청소">
-                                    <button class="btn btn-outline-danger remove-btn">삭제</button>
-                                </div>
-                                <div class="input-group mt-2">
-                                    <input type="text" class="form-control result-input" placeholder="결과" value="설거지">
-                                    <button class="btn btn-outline-danger remove-btn">삭제</button>
-                                </div>
-                            </div>
-                            <button class="btn btn-primary mt-2" id="add-result">결과 추가</button>
-                        </div>
-                    </div>
-                    
-                    <div class="row mt-4">
-                        <div class="col-md-12 text-center">
-                            <button class="btn btn-success btn-lg" id="draw-ladder">사다리 그리기</button>
-                            <button class="btn btn-warning btn-lg ms-2" id="start-ladder">사다리 타기</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="ladder-container">
-                    <div class="ladder">
-                        <div class="participants" id="ladder-participants"></div>
-                        <div class="lines" id="ladder-lines"></div>
-                        <div class="results" id="ladder-results"></div>
-                    </div>
-                </div>
-                
-                <div class="row mt-4">
-                    <div class="col-md-12">
-                        <h4>결과</h4>
-                        <div id="ladder-result"></div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- 돌림판 게임 -->
-            <div id="wheel-game" class="game-content">
-                <h3>돌림판</h3>
-                <p>항목을 입력하고 돌림판을 돌려보세요!</p>
-                
-                <div class="wheel-input-section">
-                    <div class="row">
-                        <div class="col-md-8 mx-auto">
-                            <h5>항목 추가</h5>
-                            <div id="wheel-items-list">
-                                <div class="input-group mb-2">
-                                    <input type="text" class="form-control wheel-item-input" placeholder="항목" value="피자">
-                                    <input type="color" class="form-control form-control-color wheel-color-input" value="#ff6384">
-                                    <button class="btn btn-outline-danger remove-btn">삭제</button>
-                                </div>
-                                <div class="input-group mb-2">
-                                    <input type="text" class="form-control wheel-item-input" placeholder="항목" value="치킨">
-                                    <input type="color" class="form-control form-control-color wheel-color-input" value="#36a2eb">
-                                    <button class="btn btn-outline-danger remove-btn">삭제</button>
-                                </div>
-                                <div class="input-group mb-2">
-                                    <input type="text" class="form-control wheel-item-input" placeholder="항목" value="햄버거">
-                                    <input type="color" class="form-control form-control-color wheel-color-input" value="#ffce56">
-                                    <button class="btn btn-outline-danger remove-btn">삭제</button>
-                                </div>
-                            </div>
-                            <button class="btn btn-primary mt-2" id="add-wheel-item">항목 추가</button>
-                        </div>
-                    </div>
-                    
-                    <div class="row mt-4">
-                        <div class="col-md-12 text-center">
-                            <button class="btn btn-success btn-lg" id="draw-wheel">돌림판 그리기</button>
-                            <button class="btn btn-warning btn-lg ms-2" id="spin-wheel">돌림판 돌리기</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="row mt-4">
-                    <div class="col-md-8 mx-auto">
-                        <div class="wheel-container">
-                            <div class="wheel-pointer"></div>
-                            <div class="wheel" id="wheel"></div>
-                        </div>
-                        <div class="wheel-result" id="wheel-result"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- 푸터 및 기타 섹션들 -->
-    <!-- ... 기존 HTML ... -->
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // 기존 JavaScript 코드는 여기에 유지
-        // ... 기존 JavaScript ...
 
         // 게임 탭 전환 기능
         const gameTabs = document.querySelectorAll('.game-tab');
@@ -1979,8 +2146,260 @@
             }, 4000); // 회전 애니메이션 시간과 일치
         }
 
-        // 초기 화면에서 기본 돌림판 그리기
-        document.addEventListener('DOMContentLoaded', () => {
+        // 관리자 패널 토글 기능
+        document.getElementById('adminToggle').addEventListener('click', function() {
+            document.getElementById('adminMenu').classList.toggle('open');
+        });
+
+        // 캐러셀 이미지 관리 기능
+        const carouselUpload = document.getElementById('carouselUpload');
+        const carouselPreview = document.getElementById('carouselPreview');
+        const addCarouselBtn = document.getElementById('addCarouselBtn');
+        const uploadStatus = document.getElementById('uploadStatus');
+        const carouselItemList = document.getElementById('carouselItemList');
+        const saveCarouselBtn = document.getElementById('saveCarouselBtn');
+        
+        // 로컬 스토리지에서 캐러셀 이미지 불러오기
+        let carouselImages = JSON.parse(localStorage.getItem('carouselImages')) || [
+            {
+                type: 'text',
+                title: '2023학년도 초·중등 연계 AI융합교육캠프',
+                desc: '9.2 ~ 8일 08:51~15:46 참조',
+                detail: '폴처라 시음합교육실',
+                background: 'linear-gradient(135deg, #1b4f9f, #2e86de)'
+            },
+            {
+                type: 'text',
+                title: 'KOREAN INTERNATIONAL SCHOOL',
+                desc: '2024년 중고 SW융합 해커톤 캠프',
+                detail: '일시: 2024년 11월 23일 토요일 08:00',
+                background: 'linear-gradient(135deg, #2e86de, #00cec9)'
+            },
+            {
+                type: 'image',
+                src: '/content/홈페이지%20사진%203.png',
+                title: '2025학년도 학습동 연계 사용한 교육과목',
+                desc: '다양한 교육과목을 통해 창의력과 문제 해결 능력을 키웁니다'
+            }
+        ];
+        
+        // 이미지 업로드 미리보기
+        if (carouselUpload) {
+            carouselUpload.addEventListener('change', function(e) {
+                const file = e.target.files[0];
+                if (!file) return;
+                
+                if (!file.type.match('image.*')) {
+                    uploadStatus.textContent = '이미지 파일만 업로드 가능합니다.';
+                    uploadStatus.style.color = 'red';
+                    return;
+                }
+                
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    carouselPreview.innerHTML = `<img src="${e.target.result}" alt="미리보기">`;
+                    addCarouselBtn.disabled = false;
+                    uploadStatus.textContent = '이미지를 업로드할 준비가 되었습니다.';
+                    uploadStatus.style.color = 'green';
+                };
+                reader.readAsDataURL(file);
+            });
+        }
+        
+        // 캐러셀에 이미지 추가
+        if (addCarouselBtn) {
+            addCarouselBtn.addEventListener('click', function() {
+                const file = carouselUpload.files[0];
+                if (!file) return;
+                
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const newImage = {
+                        type: 'image',
+                        src: e.target.result,
+                        title: prompt('이미지 제목을 입력하세요:', '새 이미지'),
+                        desc: prompt('이미지 설명을 입력하세요:', '')
+                    };
+                    
+                    carouselImages.push(newImage);
+                    renderCarouselItems();
+                    saveCarousel();
+                    
+                    // 폼 초기화
+                    carouselUpload.value = '';
+                    carouselPreview.innerHTML = '<div class="text-center text-muted"><i class="bi bi-image" style="font-size: 48px;"></i><p>이미지 미리보기</p></div>';
+                    addCarouselBtn.disabled = true;
+                    uploadStatus.textContent = '이미지가 성공적으로 추가되었습니다.';
+                };
+                reader.readAsDataURL(file);
+            });
+        }
+        
+        // 캐러셀 아이템 렌더링
+        function renderCarouselItems() {
+            if (!carouselItemList) return;
+            
+            carouselItemList.innerHTML = '';
+            carouselImages.forEach((item, index) => {
+                const thumb = document.createElement('div');
+                thumb.className = 'carousel-thumb';
+                thumb.dataset.index = index;
+                
+                if (item.type === 'image') {
+                    thumb.innerHTML = `
+                        <img src="${item.src}" alt="썸네일">
+                        <div class="remove-btn" data-index="${index}">&times;</div>
+                    `;
+                } else {
+                    thumb.innerHTML = `
+                        <div style="width:100%;height:100%;background:${item.background};display:flex;align-items:center;justify-content:center;color:white;">
+                            <i class="bi bi-textarea-t"></i>
+                        </div>
+                        <div class="remove-btn" data-index="${index}">&times;</div>
+                    `;
+                }
+                
+                carouselItemList.appendChild(thumb);
+            });
+            
+            // 삭제 버튼 이벤트 추가
+            document.querySelectorAll('.remove-btn').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const index = parseInt(this.dataset.index);
+                    if (confirm('정말 이 항목을 삭제하시겠습니까?')) {
+                        carouselImages.splice(index, 1);
+                        renderCarouselItems();
+                    }
+                });
+            });
+            
+            // 항목 클릭 시 편집 기능 (선택사항)
+            document.querySelectorAll('.carousel-thumb').forEach(thumb => {
+                thumb.addEventListener('click', function() {
+                    const index = parseInt(this.dataset.index);
+                    const item = carouselImages[index];
+                    
+                    if (item.type === 'text') {
+                        const newTitle = prompt('제목을 수정하세요:', item.title);
+                        if (newTitle !== null) item.title = newTitle;
+                        
+                        const newDesc = prompt('설명을 수정하세요:', item.desc);
+                        if (newDesc !== null) item.desc = newDesc;
+                        
+                        renderCarouselItems();
+                    } else {
+                        const newTitle = prompt('제목을 수정하세요:', item.title);
+                        if (newTitle !== null) item.title = newTitle;
+                        
+                        const newDesc = prompt('설명을 수정하세요:', item.desc);
+                        if (newDesc !== null) item.desc = newDesc;
+                        
+                        renderCarouselItems();
+                    }
+                });
+            });
+        }
+        
+        // 변경사항 저장
+        if (saveCarouselBtn) {
+            saveCarouselBtn.addEventListener('click', function() {
+                saveCarousel();
+                renderCarousel(); // 캐러셀 다시 렌더링
+                alert('변경사항이 저장되었습니다.');
+            });
+        }
+        
+        // 로컬 스토리지에 저장
+        function saveCarousel() {
+            localStorage.setItem('carouselImages', JSON.stringify(carouselImages));
+        }
+        
+        // 캐러셀 렌더링 함수
+        function renderCarousel() {
+            const slides = document.querySelector('.slides');
+            const dotsContainer = document.getElementById('slider-dots');
+            
+            if (!slides) return;
+            
+            slides.innerHTML = '';
+            if (dotsContainer) dotsContainer.innerHTML = '';
+            
+            carouselImages.forEach((item, index) => {
+                if (item.type === 'text') {
+                    const slide = document.createElement('div');
+                    slide.className = 'slide';
+                    slide.innerHTML = `
+                        <div class="text-slide" style="background: ${item.background}">
+                            <div class="text-slide-content">
+                                <h3 class="text-slide-title">${item.title}</h3>
+                                <p class="text-slide-desc">${item.desc}</p>
+                                <p class="text-slide-detail">${item.detail || ''}</p>
+                            </div>
+                        </div>
+                    `;
+                    slides.appendChild(slide);
+                } else {
+                    const slide = document.createElement('div');
+                    slide.className = 'slide';
+                    slide.innerHTML = `
+                        <img src="${item.src}" alt="${item.title}" onerror="handleImageError(this)">
+                        <div class="slide-content">
+                            <h3 class="slide-title">${item.title}</h3>
+                            <p class="slide-desc">${item.desc}</p>
+                        </div>
+                    `;
+                    slides.appendChild(slide);
+                }
+                
+                // Dot 생성
+                if (dotsContainer) {
+                    const dot = document.createElement('span');
+                    dot.classList.add('dot');
+                    if (index === 0) dot.classList.add('active');
+                    dot.addEventListener('click', () => moveToSlide(index));
+                    dotsContainer.appendChild(dot);
+                }
+            });
+            
+            // 슬라이더 상태 초기화
+            currentIndex = 0;
+            updateSlide();
+        }
+        
+        // 페이지 로드 시 초기화
+        document.addEventListener('DOMContentLoaded', function() {
+            // 모든 이미지에 error 이벤트 리스너 추가
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                // 이미 로드 실패한 이미지 처리
+                if (!img.complete || img.naturalHeight === 0) {
+                    handleImageError(img);
+                }
+                
+                // 앞으로 로드 실패할 이미지를 위해 이벤트 리스너 추가
+                img.addEventListener('error', function() {
+                    handleImageError(this);
+                });
+            });
+            
+            // 캐러셀 렌더링
+            renderCarouselItems();
+            renderCarousel();
+            
+            // 모바일에서 메뉴 토글 기능
+            if (window.innerWidth <= 768) {
+                document.getElementById('menuToggle').addEventListener('click', function() {
+                    const navMenu = document.querySelector('.nav-menu');
+                    if (navMenu.style.display === 'flex') {
+                        navMenu.style.display = 'none';
+                    } else {
+                        navMenu.style.display = 'flex';
+                    }
+                });
+            }
+            
+            // 초기 화면에서 기본 돌림판 그리기
             if (document.getElementById('wheel-game')) {
                 setTimeout(drawWheel, 100);
             }
